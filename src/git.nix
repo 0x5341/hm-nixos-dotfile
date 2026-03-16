@@ -9,6 +9,8 @@
     ignores = [
       "devbox.json"
       "devbox.lock"
+      ".envrc"
+      "flake.nix"
     ];
   };
 }

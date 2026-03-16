@@ -3,4 +3,5 @@
     devbox
     ghq
   ];
+  programs.direnv.enable = true;
 }
