@@ -8,6 +8,7 @@
     };
     ignores = [
       "devbox.json"
+      "devbox.lock"
     ];
   };
 }
