@@ -6,6 +6,8 @@
     Unit.After = "network.target";
     Unit.X-SwitchMethod = "stop-start";
     Service.ExecStart = ''/run/current-system/sw/bin/bash -ic "code serve-web --host 0.0.0.0 --port 8000 --without-connection-token"'';
+    Service.Restart = "always";
+    Service.RuntimeMaxSec = 86400;
     Install.WantedBy = ["default.target"];
   };
 }
