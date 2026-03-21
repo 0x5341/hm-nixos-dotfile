@@ -10,7 +10,7 @@
       "devbox.json"
       "devbox.lock"
       ".envrc"
-      "flake.nix"
+      ".direnv"
     ];
   };
 }
