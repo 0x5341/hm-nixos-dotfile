@@ -1,6 +1,13 @@
-{ config, ... }: {
-  wayland.windowManager.river = {
+{ config, pkgs, ... }: {
+  wayland.windowManager.sway = {
     enable = true;
+    checkConfig = false;
+    config.output = {
+      HEADLESS-1 = {
+        mode = "1200x850@60Hz";
+        bg = "#8be5ea solid_color"; 
+      };
+    };
   };
 
   systemd.user.services."wayland-wm" = {
@@ -9,7 +16,7 @@
       '';
     Unit.After = "network.target";
     Unit.X-SwitchMethod = "stop-start";
-    Service.ExecStart = "/etc/profiles/per-user/${config.home.username}/bin/river";
+    Service.ExecStart = ''/run/current-system/sw/bin/bash -ic "sway"'';
     Service.Environment = [
       "WLR_BACKENDS=headless"
       "WLR_NO_HARDWARE_CURSORS=1"
