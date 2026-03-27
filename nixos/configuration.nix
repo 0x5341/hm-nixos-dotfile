@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
 
       ./nix-ld.nix
+      ./tailscale.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
