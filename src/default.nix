@@ -5,6 +5,6 @@
     ./git.nix
     ./vscode.nix
     ./direnv.nix
-    ./vnc
+    # ./vnc
   ];
 }
