@@ -8,6 +8,13 @@
         bg = "#8be5ea solid_color"; 
       };
     };
+
+    config.input = {
+      "type:keyboard" = {
+        xkb_layout = "jp";
+        xkb_model = "microsoftsurface";
+      };
+    };
   };
 
   systemd.user.services."wayland-wm" = {
@@ -16,6 +23,7 @@
       '';
     Unit.After = "network.target";
     Unit.X-SwitchMethod = "stop-start";
+    Service.Restart = "always";
     Service.ExecStart = ''/run/current-system/sw/bin/bash -ic "sway"'';
     Service.Environment = [
       "WLR_BACKENDS=headless"
