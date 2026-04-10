@@ -11,6 +11,7 @@
       "devbox.lock"
       ".envrc"
       ".direnv"
+      ".vscode"
     ];
   };
 }
