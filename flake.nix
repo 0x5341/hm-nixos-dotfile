@@ -19,7 +19,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users."0x5341"= ./0x5341.nix;
+              home-manager.users."0x5341" = ./0x5341.nix;
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix

@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   home.packages = with pkgs; [
     novnc
   ];
@@ -12,6 +13,6 @@
     Service.Environment = [
       "PATH=/run/current-system/sw/bin/"
     ];
-    Install.WantedBy = ["default.target"];
+    Install.WantedBy = [ "default.target" ];
   };
 }

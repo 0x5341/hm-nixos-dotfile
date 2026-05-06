@@ -1,4 +1,5 @@
-{ config, ... }: {
+{ config, ... }:
+{
   services.wayvnc = {
     enable = true;
     settings.address = "0.0.0.0";
@@ -14,6 +15,6 @@
     Service.Environment = [
       "WAYLAND_DISPLAY=wayland-1"
     ];
-    Install.WantedBy = ["default.target"];
+    Install.WantedBy = [ "default.target" ];
   };
 }
