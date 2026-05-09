@@ -33,6 +33,13 @@
                   catppuccin.accent = "sky";
                   catppuccin.flavor = "frappe";
                 }
+                {
+                  programs.home-manager.enable = true;
+
+                  imports = [
+                    ./src
+                  ];
+                }
               ];
               home-manager.users."0x5341" = ./0x5341.nix;
 
