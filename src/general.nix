@@ -6,4 +6,5 @@
     github-copilot-cli
   ];
   programs.bash.enable = true;
+  programs.zoxide.enable = true;
 }
