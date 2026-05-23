@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       theme = "catppuccin-frappe";
-      default_mode = "locked";
+      # default_mode = "locked";
       default_shell = "nu";
       mirror_session = true;
       session_name = "main";
