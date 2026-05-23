@@ -5,6 +5,9 @@
     settings = {
       show_banner = false;
     };
+    shellAliases = {
+      "lg" = "lazygit";
+    };
   };
   programs.starship = {
     enable = true;
