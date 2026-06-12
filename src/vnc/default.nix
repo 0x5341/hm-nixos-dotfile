@@ -7,7 +7,7 @@
     ./lavapipe.nix
     ./font.nix
   ];
-  home.sessionVariables = {
+  programs.nushell.environmentVariables = {
     WAYLAND_DISPLAY = "wayland-1";
     DISPLAY = ":0";
   };
