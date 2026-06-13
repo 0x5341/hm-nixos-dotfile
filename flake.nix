@@ -7,6 +7,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     catppuccin.url = "github:catppuccin/nix";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
+    bun2nix.url = "github:nix-community/bun2nix";
+    bun2nix.inputs.nixpkgs.follows = "nixpkgs";
+    context-mode.url = "github:mksglu/context-mode";
+    context-mode.flake = false;
   };
 
   outputs =
@@ -14,6 +18,8 @@
       nixpkgs,
       home-manager,
       catppuccin,
+      bun2nix,
+      context-mode,
       ...
     }:
     {
@@ -45,6 +51,10 @@
 
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
+              home-manager.extraSpecialArgs = {
+                  "bun2nix" = bun2nix;
+                  "context-mode" = context-mode;
+              };
             }
           ];
         };

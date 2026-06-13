@@ -2,6 +2,7 @@
 {
   imports = [
     # ./vnc
+    ./context-mode.nix
     ./direnv.nix
     ./fresh.nix
     ./general.nix
