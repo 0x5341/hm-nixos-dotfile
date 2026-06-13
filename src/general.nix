@@ -18,6 +18,13 @@
       }
     );
     enableMcpIntegration = true;
+    mcpServers = {
+      "context-mode" = {
+        type = "local";
+        command = "context-mode";
+        tools = ["*"];
+      };
+    };
     settings = {
       hooks = {
         PreToolUse = [
