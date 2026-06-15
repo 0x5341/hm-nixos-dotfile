@@ -42,21 +42,23 @@ let
       ];
       buildPhase = ''
         bun run build
-        bun build ./cli.bundle.mjs --compile --outfile context-mode
       '';
       installPhase = ''
-        mkdir -p $out/bin
-        cp ./context-mode $out/bin/context-mode
+        mkdir -p $out
+        cp -r . $out/
       '';
       dontStrip = true;
     });
 in {
   home.packages = [
-    (buildBunPackage {
+    (let ctx = buildBunPackage {
       src = context-mode;
       pname = "context-mode";
       version = "main";
-    })
+    }; in pkgs.writeShellScriptBin "context-mode" ''
+    #! /bin/sh
+    ${pkgs.bun}/bin/bun ${ctx}/cli.bundle.mjs "$@"
+    '')
     pkgs.bun
   ];
 }
