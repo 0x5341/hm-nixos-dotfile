@@ -36,6 +36,7 @@
                 {
                   imports = [ catppuccin.homeModules.catppuccin ];
                   catppuccin.enable = true;
+                  catppuccin.autoEnable = true;
                   catppuccin.accent = "sky";
                   catppuccin.flavor = "frappe";
                 }
