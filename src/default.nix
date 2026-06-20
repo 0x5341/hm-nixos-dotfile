@@ -9,6 +9,7 @@
     ./general.nix
     ./gh.nix
     ./git.nix
+    ./neovim
     ./nushell.nix
     ./opencode.nix
     ./vscode.nix

@@ -11,6 +11,8 @@
     bun2nix.inputs.nixpkgs.follows = "nixpkgs";
     context-mode.url = "github:mksglu/context-mode";
     context-mode.flake = false;
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -20,6 +22,7 @@
       catppuccin,
       bun2nix,
       context-mode,
+      nixvim,
       ...
     }:
     {
@@ -55,6 +58,7 @@
               home-manager.extraSpecialArgs = {
                   "bun2nix" = bun2nix;
                   "context-mode" = context-mode;
+                  "nixvim" = nixvim;
               };
             }
           ];
