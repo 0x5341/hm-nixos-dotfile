@@ -4,6 +4,7 @@
     enable = true;
     settings = {
       show_banner = false;
+      shell_integration.osc133 = false;
     };
     shellAliases = {
       "lg" = "lazygit";
