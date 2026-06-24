@@ -1,4 +1,11 @@
-{ bun2nix, context-mode, pkgs, lib, config, ... }:
+{
+  bun2nix,
+  context-mode,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 let
   system = pkgs.stdenv.hostPlatform.system;
   bun2nixLib = bun2nix.packages.${system}.default;
@@ -27,10 +34,10 @@ let
         outputHashMode = "flat";
         outputHash = "sha256-ivcIrJqkaXoQvukj7UPuakQFDoRgB2JH5Wqlvh2gpHw=";
       };
-    bunDeps = bun2nixLib.fetchBunDeps {
-      bunNix = builtins.path { path = makeBunNix; };
-    };
-    in 
+      bunDeps = bun2nixLib.fetchBunDeps {
+        bunNix = builtins.path { path = makeBunNix; };
+      };
+    in
     pkgs.stdenv.mkDerivation {
       pname = pname;
       version = version;
@@ -48,17 +55,24 @@ let
         cp -r . $out/
       '';
       dontStrip = true;
-    });
-in {
+    }
+  );
+in
+{
   home.packages = [
-    (let ctx = buildBunPackage {
-      src = context-mode;
-      pname = "context-mode";
-      version = "main";
-    }; in pkgs.writeShellScriptBin "context-mode" ''
-    #! /bin/sh
-    ${pkgs.bun}/bin/bun ${ctx}/cli.bundle.mjs "$@"
-    '')
+    (
+      let
+        ctx = buildBunPackage {
+          src = context-mode;
+          pname = "context-mode";
+          version = "main";
+        };
+      in
+      pkgs.writeShellScriptBin "context-mode" ''
+        #! /bin/sh
+        ${pkgs.bun}/bin/bun ${ctx}/cli.bundle.mjs "$@"
+      ''
+    )
     pkgs.bun
   ];
 }

@@ -56,9 +56,9 @@
               # Optionally, use home-manager.extraSpecialArgs to pass
               # arguments to home.nix
               home-manager.extraSpecialArgs = {
-                  "bun2nix" = bun2nix;
-                  "context-mode" = context-mode;
-                  "nixvim" = nixvim;
+                "bun2nix" = bun2nix;
+                "context-mode" = context-mode;
+                "nixvim" = nixvim;
               };
             }
           ];

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.github-copilot-cli = {
     enable = true;
     package = pkgs.github-copilot-cli.overrideAttrs (
@@ -15,7 +15,7 @@
       "context-mode" = {
         type = "local";
         command = "context-mode";
-        tools = ["*"];
+        tools = [ "*" ];
       };
     };
     settings = {

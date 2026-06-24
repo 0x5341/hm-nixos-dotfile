@@ -3,4 +3,4 @@
     source = "${pkgs.zed-editor.remote_server}/bin";
     recursive = true;
   };
-} 
+}
