@@ -13,6 +13,7 @@
     ./nushell.nix
     ./opencode.nix
     ./vscode.nix
+    ./zed-server.nix
     ./zellij.nix
   ];
 }
